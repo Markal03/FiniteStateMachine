@@ -34,7 +34,11 @@ int main()
 			break;
 
 		case State::Stand:
-			if (newState != Eat && newState != currentState) currentState = newState;
+
+			if (newState != Eat && newState != currentState) {
+				currentState = newState;
+				currentStandingSeconds = 15;
+			}
 
 			if (currentStandingSeconds == 0) {
 				currentState = Sit;
